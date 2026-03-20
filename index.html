@@ -12,353 +12,288 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', 'Segoe UI', sans-serif;
-            background: #f0f2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
+            font-family: 'Source Sans 3', Georgia, serif;
             background: #fff;
-            min-height: 100vh;
+            color: #2d2d2d;
+            line-height: 1.55;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .header {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: #fff;
-            padding: 50px 40px;
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 40px 60px;
         }
 
-        .header h1 {
-            font-size: 2.4rem;
+        /* Header - clean, no flashy gradient */
+        .name {
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 6px;
+            color: #111;
+            letter-spacing: -0.5px;
         }
 
-        .header .title {
-            font-size: 1.15rem;
-            color: #a8d8ea;
-            margin-bottom: 20px;
+        .role {
+            font-size: 1.05rem;
+            color: #666;
+            margin-top: 2px;
         }
 
-        .header .summary {
-            font-size: 0.95rem;
-            color: #ccc;
-            max-width: 620px;
+        .about {
+            margin-top: 14px;
+            font-size: 0.94rem;
+            color: #444;
+            max-width: 580px;
+            line-height: 1.65;
+        }
+
+        .contact {
+            margin-top: 14px;
+            font-size: 0.87rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        .contact a:hover { text-decoration: underline; }
+
+        .sep { color: #ccc; margin: 0 6px; }
+
+        hr.divider {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 28px 0 24px;
+        }
+
+        /* Section titles */
+        h2 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            color: #111;
+            margin-bottom: 16px;
+        }
+
+        .section { margin-bottom: 28px; }
+
+        /* Skills - simple inline, not pill tags */
+        .skills-row {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
             line-height: 1.7;
         }
 
-        .contact-bar {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-top: 22px;
-        }
+        .skills-row:last-child { margin-bottom: 0; }
 
-        .contact-bar a {
-            color: #a8d8ea;
-            text-decoration: none;
-            font-size: 0.88rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s;
-        }
-
-        .contact-bar a:hover { color: #fff; }
-
-        .contact-bar svg {
-            width: 15px;
-            height: 15px;
-            fill: currentColor;
-            flex-shrink: 0;
-        }
-
-        .content { padding: 40px; }
-
-        .section { margin-bottom: 36px; }
-
-        .section-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #1a1a2e;
-            border-bottom: 2px solid #1a1a2e;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
-
-        /* Skills grouped */
-        .skill-group { margin-bottom: 12px; }
-        .skill-group:last-child { margin-bottom: 0; }
-
-        .skill-label {
-            font-size: 0.8rem;
+        .skills-cat {
             font-weight: 600;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 6px;
+            color: #333;
         }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
+        .skills-list {
+            color: #555;
         }
 
-        .skill-tag {
-            background: #e8f4f8;
-            color: #16213e;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.82rem;
-            font-weight: 500;
-        }
-
-        /* Experience */
-        .job {
-            margin-bottom: 24px;
-            padding-left: 20px;
-            border-left: 3px solid #a8d8ea;
-        }
-
+        /* Jobs */
+        .job { margin-bottom: 20px; }
         .job:last-child { margin-bottom: 0; }
 
-        .job-header {
+        .job-top {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
             flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 4px;
         }
 
         .job-title {
             font-weight: 700;
-            font-size: 1rem;
-            color: #1a1a2e;
+            font-size: 0.95rem;
+            color: #111;
         }
 
-        .job-period {
-            font-size: 0.82rem;
+        .job-date {
+            font-size: 0.84rem;
             color: #888;
-            white-space: nowrap;
         }
 
-        .job-company {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 6px;
-        }
-
-        .job-desc {
+        .job-co {
             font-size: 0.88rem;
-            color: #555;
+            color: #666;
+            font-style: italic;
+            margin-top: 1px;
         }
 
-        .job-desc li {
-            margin-bottom: 4px;
-            margin-left: 16px;
+        .job ul {
+            margin-top: 5px;
+            padding-left: 18px;
+            font-size: 0.88rem;
+            color: #444;
+        }
+
+        .job li {
+            margin-bottom: 2px;
+        }
+
+        .job li::marker {
+            color: #bbb;
         }
 
         /* Education */
-        .edu {
-            padding-left: 20px;
-            border-left: 3px solid #a8d8ea;
-        }
-
-        .edu-degree {
+        .edu-title {
             font-weight: 700;
-            font-size: 1rem;
-            color: #1a1a2e;
+            font-size: 0.95rem;
+            color: #111;
         }
 
         .edu-school {
-            font-size: 0.9rem;
-            color: #555;
+            font-size: 0.88rem;
+            color: #666;
         }
 
-        .edu-period {
-            font-size: 0.82rem;
+        .edu-year {
+            font-size: 0.84rem;
             color: #888;
         }
 
         @media print {
-            body { background: #fff; }
-            .container { box-shadow: none; }
+            .page { padding: 20px; }
         }
 
         @media (max-width: 600px) {
-            .header { padding: 30px 20px; }
-            .header h1 { font-size: 1.8rem; }
-            .content { padding: 24px 20px; }
-            .contact-bar { gap: 12px; }
-            .job-header { flex-direction: column; gap: 2px; }
+            .page { padding: 28px 20px 40px; }
+            .name { font-size: 1.6rem; }
+            .job-top { flex-direction: column; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Asdar Syam</h1>
-            <div class="title">Software Engineer</div>
-            <p class="summary">
-                Software engineer with 10+ years of experience building web and mobile applications.
-                Proficient in PHP/Laravel for backend, React and Vue for frontend, and Kotlin, React Native,
-                and Flutter for mobile development. Passionate about learning new technologies and delivering
-                optimized solutions across platforms.
-            </p>
-            <div class="contact-bar">
-                <a href="mailto:asdar.binsyam@gmail.com">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    asdar.binsyam@gmail.com
-                </a>
-                <a href="tel:+6285299476246">
-                    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.07 21 3 13.93 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.33.03.7-.25 1.01l-2.2 2.2z"/></svg>
-                    +62 852-9947-6246
-                </a>
-                <a href="https://github.com/asd412id" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.43 9.8 8.21 11.39.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.57 21.8 24 17.31 24 12 24 5.37 18.63 0 12 0z"/></svg>
-                    github.com/asd412id
-                </a>
-                <a href="https://linkedin.com/in/asd412id" target="_blank">
-                    <svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.37V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
-                    linkedin.com/in/asd412id
-                </a>
-                <a>
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-                    Bikeru, Sinjai Selatan, Indonesia
-                </a>
+    <div class="page">
+        <div class="name">Asdar Syam</div>
+        <div class="role">Software Engineer</div>
+
+        <p class="about">
+            Software engineer with 10+ years of experience building web and mobile applications.
+            Mostly worked with PHP/Laravel on the backend, React and Vue on the frontend,
+            and Kotlin, React Native, Flutter for mobile apps.
+        </p>
+
+        <div class="contact">
+            <a href="mailto:asdar.binsyam@gmail.com">asdar.binsyam@gmail.com</a>
+            <span class="sep">·</span>
+            <a href="tel:+6285299476246">+62 852-9947-6246</a>
+            <span class="sep">·</span>
+            Sinjai, Indonesia
+            <br>
+            <a href="https://github.com/asd412id">github.com/asd412id</a>
+            <span class="sep">·</span>
+            <a href="https://linkedin.com/in/asd412id">linkedin.com/in/asd412id</a>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h2>Skills</h2>
+            <div class="skills-row">
+                <span class="skills-cat">Backend:</span>
+                <span class="skills-list">PHP, Laravel, CodeIgniter, Node.js, Python, FastAPI</span>
+            </div>
+            <div class="skills-row">
+                <span class="skills-cat">Frontend:</span>
+                <span class="skills-list">JavaScript, React, Vue.js, jQuery, Tailwind CSS, Bootstrap</span>
+            </div>
+            <div class="skills-row">
+                <span class="skills-cat">Mobile:</span>
+                <span class="skills-list">Kotlin, Java, React Native, Flutter</span>
+            </div>
+            <div class="skills-row">
+                <span class="skills-cat">Database & Tools:</span>
+                <span class="skills-list">MySQL, PostgreSQL, Docker, Git, Linux</span>
             </div>
         </div>
 
-        <div class="content">
-            <div class="section">
-                <div class="section-title">Technical Skills</div>
-                <div class="skill-group">
-                    <div class="skill-label">Backend</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Laravel</span>
-                        <span class="skill-tag">CodeIgniter</span>
-                        <span class="skill-tag">Node JS</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">FastAPI</span>
-                    </div>
+        <hr class="divider">
+
+        <div class="section">
+            <h2>Experience</h2>
+
+            <div class="job">
+                <div class="job-top">
+                    <span class="job-title">Full Stack Developer</span>
+                    <span class="job-date">2019 – present</span>
                 </div>
-                <div class="skill-group">
-                    <div class="skill-label">Frontend</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React JS</span>
-                        <span class="skill-tag">Vue JS</span>
-                        <span class="skill-tag">jQuery</span>
-                        <span class="skill-tag">Tailwind CSS</span>
-                        <span class="skill-tag">Bootstrap</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-label">Mobile</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">Kotlin</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">React Native</span>
-                        <span class="skill-tag">Flutter</span>
-                    </div>
-                </div>
-                <div class="skill-group">
-                    <div class="skill-label">Database & DevOps</div>
-                    <div class="skills-grid">
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Linux</span>
-                    </div>
-                </div>
+                <div class="job-co">Sinjai District Office of Education</div>
+                <ul>
+                    <li>Build and maintain web and mobile apps for the district education office</li>
+                    <li>Internal tools for administrative processes and data management</li>
+                    <li>Stack: Laravel, React, Flutter</li>
+                </ul>
             </div>
 
-            <div class="section">
-                <div class="section-title">Work Experience</div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Full Stack Developer</span>
-                        <span class="job-period">2019 — Present</span>
-                    </div>
-                    <div class="job-company">Sinjai District Office of Education</div>
-                    <ul class="job-desc">
-                        <li>Developing and maintaining web and mobile applications for the district education office</li>
-                        <li>Building internal tools to streamline administrative processes and data management</li>
-                        <li>Full stack development using PHP/Laravel, React, and mobile frameworks</li>
-                    </ul>
+            <div class="job">
+                <div class="job-top">
+                    <span class="job-title">Full Stack Web Developer</span>
+                    <span class="job-date">2020 – 2021</span>
                 </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Full Stack Web Developer</span>
-                        <span class="job-period">2020 — 2021</span>
-                    </div>
-                    <div class="job-company">PT. Geokatalis Indonesia</div>
-                    <ul class="job-desc">
-                        <li>Built a spatial map application for geographic data visualization and analysis</li>
-                        <li>Integrated mapping APIs and geospatial data processing pipelines</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Backend PHP Developer</span>
-                        <span class="job-period">2018</span>
-                    </div>
-                    <div class="job-company">PT. Docotel Teknologi Celebes</div>
-                    <ul class="job-desc">
-                        <li>Developed a prisoner remission management application using Laravel</li>
-                        <li>Designed database schema and RESTful APIs for the backend system</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">WordPress Developer</span>
-                        <span class="job-period">2017</span>
-                    </div>
-                    <div class="job-company">PT. Viva Holiday</div>
-                    <ul class="job-desc">
-                        <li>Created custom WordPress themes and plugins for travel booking platform</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <div class="job-header">
-                        <span class="job-title">Full Stack PHP Developer / Team Leader</span>
-                        <span class="job-period">2016</span>
-                    </div>
-                    <div class="job-company">PT. Tegar Jati</div>
-                    <ul class="job-desc">
-                        <li>Led a development team building web applications using CodeIgniter</li>
-                        <li>Managed project timelines, code reviews, and deployment workflows</li>
-                    </ul>
-                </div>
+                <div class="job-co">PT. Geokatalis Indonesia</div>
+                <ul>
+                    <li>Built a spatial map application for geographic data visualization</li>
+                    <li>Integrated mapping APIs and geospatial data processing</li>
+                </ul>
             </div>
 
-            <div class="section">
-                <div class="section-title">Education</div>
-                <div class="edu">
-                    <div class="edu-degree">Bachelor of Informatics and Computer Engineering</div>
-                    <div class="edu-school">Makassar State University</div>
-                    <div class="edu-period">2011 — 2015</div>
+            <div class="job">
+                <div class="job-top">
+                    <span class="job-title">Backend Developer</span>
+                    <span class="job-date">2018</span>
                 </div>
+                <div class="job-co">PT. Docotel Teknologi Celebes</div>
+                <ul>
+                    <li>Developed a prisoner remission management system with Laravel</li>
+                    <li>Designed the database schema and REST APIs</li>
+                </ul>
             </div>
+
+            <div class="job">
+                <div class="job-top">
+                    <span class="job-title">WordPress Developer</span>
+                    <span class="job-date">2017</span>
+                </div>
+                <div class="job-co">PT. Viva Holiday</div>
+                <ul>
+                    <li>Custom themes and plugins for a travel booking platform</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-top">
+                    <span class="job-title">Full Stack Developer / Team Lead</span>
+                    <span class="job-date">2016</span>
+                </div>
+                <div class="job-co">PT. Tegar Jati</div>
+                <ul>
+                    <li>Led a small team building web apps with CodeIgniter</li>
+                    <li>Handled project planning, code reviews, and deployments</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="edu-title">B.S. Informatics and Computer Engineering</div>
+            <div class="edu-school">Makassar State University</div>
+            <div class="edu-year">2011 – 2015</div>
         </div>
     </div>
 </body>
