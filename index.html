@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asdar Syam - Software Engineer</title>
+    <meta name="description" content="Software engineer with 10+ years of experience building web and mobile applications.">
+    <meta property="og:title" content="Asdar Syam - Software Engineer">
+    <meta property="og:description" content="Software engineer with 10+ years of experience in web and mobile development.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://asd412id.github.io/cv/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             background: #f0f2f5;
             color: #333;
             line-height: 1.6;
@@ -21,7 +30,6 @@
             min-height: 100vh;
         }
 
-        /* Header */
         .header {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: #fff;
@@ -43,7 +51,7 @@
         .header .summary {
             font-size: 0.95rem;
             color: #ccc;
-            max-width: 600px;
+            max-width: 620px;
             line-height: 1.7;
         }
 
@@ -57,7 +65,7 @@
         .contact-bar a {
             color: #a8d8ea;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -67,41 +75,52 @@
         .contact-bar a:hover { color: #fff; }
 
         .contact-bar svg {
-            width: 16px;
-            height: 16px;
+            width: 15px;
+            height: 15px;
             fill: currentColor;
             flex-shrink: 0;
         }
 
-        /* Main content */
         .content { padding: 40px; }
 
         .section { margin-bottom: 36px; }
 
         .section-title {
-            font-size: 1.1rem;
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             color: #1a1a2e;
             border-bottom: 2px solid #1a1a2e;
             padding-bottom: 8px;
             margin-bottom: 20px;
         }
 
-        /* Skills */
+        /* Skills grouped */
+        .skill-group { margin-bottom: 12px; }
+        .skill-group:last-child { margin-bottom: 0; }
+
+        .skill-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
         }
 
         .skill-tag {
             background: #e8f4f8;
             color: #16213e;
-            padding: 6px 14px;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 500;
         }
 
@@ -130,7 +149,7 @@
         }
 
         .job-period {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #888;
             white-space: nowrap;
         }
@@ -142,12 +161,12 @@
         }
 
         .job-desc {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.88rem;
+            color: #555;
         }
 
         .job-desc li {
-            margin-bottom: 3px;
+            margin-bottom: 4px;
             margin-left: 16px;
         }
 
@@ -169,17 +188,15 @@
         }
 
         .edu-period {
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: #888;
         }
 
-        /* Print */
         @media print {
             body { background: #fff; }
             .container { box-shadow: none; }
         }
 
-        /* Mobile */
         @media (max-width: 600px) {
             .header { padding: 30px 20px; }
             .header h1 { font-size: 1.8rem; }
@@ -227,30 +244,46 @@
         <div class="content">
             <div class="section">
                 <div class="section-title">Technical Skills</div>
-                <div class="skills-grid">
-                    <span class="skill-tag">PHP</span>
-                    <span class="skill-tag">Laravel</span>
-                    <span class="skill-tag">CodeIgniter</span>
-                    <span class="skill-tag">MySQL</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">React JS</span>
-                    <span class="skill-tag">Vue JS</span>
-                    <span class="skill-tag">Node JS</span>
-                    <span class="skill-tag">jQuery</span>
-                    <span class="skill-tag">WordPress</span>
-                    <span class="skill-tag">Kotlin</span>
-                    <span class="skill-tag">Java</span>
-                    <span class="skill-tag">React Native</span>
-                    <span class="skill-tag">Flutter</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">Bootstrap</span>
-                    <span class="skill-tag">Tailwind CSS</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">FastAPI</span>
-                    <span class="skill-tag">PostgreSQL</span>
-                    <span class="skill-tag">Docker</span>
-                    <span class="skill-tag">Git</span>
-                    <span class="skill-tag">System Analysis</span>
+                <div class="skill-group">
+                    <div class="skill-label">Backend</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">PHP</span>
+                        <span class="skill-tag">Laravel</span>
+                        <span class="skill-tag">CodeIgniter</span>
+                        <span class="skill-tag">Node JS</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">FastAPI</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Frontend</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React JS</span>
+                        <span class="skill-tag">Vue JS</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Bootstrap</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Mobile</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">React Native</span>
+                        <span class="skill-tag">Flutter</span>
+                    </div>
+                </div>
+                <div class="skill-group">
+                    <div class="skill-label">Database & DevOps</div>
+                    <div class="skills-grid">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
                 </div>
             </div>
 
@@ -265,18 +298,20 @@
                     <div class="job-company">Sinjai District Office of Education</div>
                     <ul class="job-desc">
                         <li>Developing and maintaining web and mobile applications for the district education office</li>
+                        <li>Building internal tools to streamline administrative processes and data management</li>
                         <li>Full stack development using PHP/Laravel, React, and mobile frameworks</li>
                     </ul>
                 </div>
 
                 <div class="job">
                     <div class="job-header">
-                        <span class="job-title">Freelance Full Stack Web Developer</span>
+                        <span class="job-title">Full Stack Web Developer</span>
                         <span class="job-period">2020 — 2021</span>
                     </div>
                     <div class="job-company">PT. Geokatalis Indonesia</div>
                     <ul class="job-desc">
-                        <li>Built a spatial map application for geographic data visualization</li>
+                        <li>Built a spatial map application for geographic data visualization and analysis</li>
+                        <li>Integrated mapping APIs and geospatial data processing pipelines</li>
                     </ul>
                 </div>
 
@@ -287,7 +322,8 @@
                     </div>
                     <div class="job-company">PT. Docotel Teknologi Celebes</div>
                     <ul class="job-desc">
-                        <li>Developed a prisoner remission application using Laravel</li>
+                        <li>Developed a prisoner remission management application using Laravel</li>
+                        <li>Designed database schema and RESTful APIs for the backend system</li>
                     </ul>
                 </div>
 
@@ -298,7 +334,7 @@
                     </div>
                     <div class="job-company">PT. Viva Holiday</div>
                     <ul class="job-desc">
-                        <li>Created custom WordPress themes and plugins</li>
+                        <li>Created custom WordPress themes and plugins for travel booking platform</li>
                     </ul>
                 </div>
 
@@ -309,8 +345,8 @@
                     </div>
                     <div class="job-company">PT. Tegar Jati</div>
                     <ul class="job-desc">
-                        <li>Full stack web development using CodeIgniter</li>
-                        <li>Led the project development team</li>
+                        <li>Led a development team building web applications using CodeIgniter</li>
+                        <li>Managed project timelines, code reviews, and deployment workflows</li>
                     </ul>
                 </div>
             </div>
