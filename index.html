@@ -3,314 +3,946 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asdar Syam - Software Engineer</title>
-    <meta name="description" content="Software engineer with 10+ years of experience building web and mobile applications.">
-    <meta property="og:title" content="Asdar Syam - Software Engineer">
-    <meta property="og:description" content="Software engineer with 10+ years of experience in web and mobile development.">
+    <title>Asdar Syam — Software Engineer</title>
+    <meta name="description" content="Asdar Syam is a Software Engineer and Full Stack Developer with 10+ years of experience building web, mobile, education, geospatial, and business applications.">
+    <meta name="author" content="Asdar Syam">
+    <meta property="og:title" content="Asdar Syam — Software Engineer">
+    <meta property="og:description" content="Elegant online CV and portfolio for Asdar Syam, Software Engineer / Full Stack Developer.">
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://asd412id.github.io/cv/">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230f172a'/><text x='50' y='62' text-anchor='middle' font-size='46' fill='%23d6b36a'>AS</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --ink: #111827;
+            --muted: #64748b;
+            --soft: #f8fafc;
+            --paper: #ffffff;
+            --line: rgba(15, 23, 42, 0.11);
+            --navy: #0f172a;
+            --navy-2: #1e293b;
+            --gold: #d6b36a;
+            --gold-deep: #9a6a23;
+            --teal: #0f766e;
+            --shadow: 0 28px 80px rgba(15, 23, 42, 0.12);
+            --radius-xl: 30px;
+            --radius-lg: 22px;
+            --radius-md: 16px;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Source Sans 3', 'Segoe UI', sans-serif;
-            background: #eef1f5;
-            color: #2d2d2d;
-            line-height: 1.55;
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            color: var(--ink);
+            line-height: 1.65;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(214, 179, 106, 0.22), transparent 28rem),
+                radial-gradient(circle at 85% 2%, rgba(15, 118, 110, 0.14), transparent 26rem),
+                linear-gradient(135deg, #fbfaf7 0%, #f4f7fb 43%, #eef3f6 100%);
             -webkit-font-smoothing: antialiased;
         }
 
-        .page {
-            max-width: 820px;
-            margin: 32px auto;
-            background: #fff;
-            border-radius: 6px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-            overflow: hidden;
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            opacity: 0.34;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+            mix-blend-mode: multiply;
         }
 
-        /* Header with subtle accent */
-        .header {
-            padding: 38px 40px 32px;
-            border-bottom: 1px solid #e8e8e8;
-            background: #fafbfc;
+        a { color: inherit; }
+
+        .shell {
+            width: min(1180px, calc(100% - 34px));
+            margin: 0 auto;
         }
 
-        .name {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #111;
-            letter-spacing: -0.5px;
-        }
-
-        .role {
-            font-size: 1rem;
-            color: #4a7c96;
-            font-weight: 600;
-            margin-top: 3px;
-        }
-
-        .about {
+        .topbar {
+            position: sticky;
+            top: 14px;
+            z-index: 20;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
             margin-top: 14px;
-            font-size: 0.92rem;
-            color: #555;
-            max-width: 600px;
-            line-height: 1.65;
+            padding: 12px 14px 12px 18px;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 999px;
+            background: rgba(255,255,255,0.74);
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+            backdrop-filter: blur(18px);
         }
 
-        .contact {
-            margin-top: 16px;
-            font-size: 0.86rem;
-            color: #666;
-            line-height: 1.9;
-        }
-
-        .contact a {
-            color: #3573b1;
+        .mark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--navy);
             text-decoration: none;
         }
 
-        .contact a:hover { text-decoration: underline; }
+        .mark-badge {
+            display: grid;
+            place-items: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            color: var(--gold);
+            background: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 0;
+        }
 
-        .sep { color: #ccc; margin: 0 5px; }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-        /* Body */
-        .body { padding: 32px 40px 44px; }
+        .nav a {
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+            transition: all 180ms ease;
+        }
 
-        .section { margin-bottom: 30px; }
-        .section:last-child { margin-bottom: 0; }
+        .nav a:hover {
+            color: var(--navy);
+            background: rgba(15, 23, 42, 0.06);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.42fr 0.85fr;
+            gap: 34px;
+            margin: 28px 0 28px;
+            padding: 48px;
+            border-radius: var(--radius-xl);
+            background:
+                linear-gradient(120deg, rgba(15, 23, 42, 0.97), rgba(30, 41, 59, 0.95)),
+                var(--navy);
+            color: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            right: -160px;
+            top: -180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(214, 179, 106, 0.34), transparent 68%);
+        }
+
+        .kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+            color: #f2d99d;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+        }
+
+        .kicker::before {
+            content: "";
+            width: 36px;
+            height: 1px;
+            background: currentColor;
+        }
+
+        h1 {
+            margin: 0;
+            max-width: 750px;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            font-size: clamp(3.2rem, 7vw, 6.6rem);
+            line-height: 0.86;
+            letter-spacing: -0.055em;
+        }
+
+        .headline {
+            margin: 20px 0 0;
+            max-width: 690px;
+            color: rgba(255,255,255,0.78);
+            font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+        }
+
+        .highlight { color: #fff; font-weight: 700; }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 44px;
+            padding: 10px 17px;
+            border: 1px solid rgba(255,255,255,0.16);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 800;
+            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+        }
+
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary {
+            color: var(--navy);
+            background: var(--gold);
+            box-shadow: 0 16px 38px rgba(214, 179, 106, 0.22);
+        }
+        .btn-ghost {
+            color: #fff;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .profile-card {
+            position: relative;
+            z-index: 1;
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 355px;
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 26px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(18px);
+        }
+
+        .availability {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            color: rgba(255,255,255,0.9);
+            background: rgba(15, 118, 110, 0.28);
+            font-size: 0.8rem;
+            font-weight: 800;
+        }
+
+        .availability::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #34d399;
+            box-shadow: 0 0 0 5px rgba(52, 211, 153, 0.12);
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .contact-item {
+            display: grid;
+            gap: 3px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .contact-item:last-child { border-bottom: 0; padding-bottom: 0; }
+        .contact-label {
+            color: rgba(255,255,255,0.48);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+        .contact-value {
+            color: rgba(255,255,255,0.92);
+            text-decoration: none;
+            font-weight: 700;
+            word-break: break-word;
+        }
+        .contact-value:hover { color: var(--gold); }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.72);
+            border-radius: var(--radius-lg);
+            background: rgba(255,255,255,0.78);
+            box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06);
+            backdrop-filter: blur(18px);
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            line-height: 1;
+        }
+        .stat span {
+            display: block;
+            margin-top: 7px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .section {
+            margin: 34px 0;
+            padding: 34px;
+            border: 1px solid rgba(255,255,255,0.72);
+            border-radius: var(--radius-xl);
+            background: rgba(255,255,255,0.84);
+            box-shadow: 0 16px 54px rgba(15, 23, 42, 0.07);
+            backdrop-filter: blur(18px);
+        }
+
+        .section-head {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            color: var(--gold-deep);
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        .eyebrow::before {
+            content: "";
+            width: 26px;
+            height: 1px;
+            background: currentColor;
+        }
 
         h2 {
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.6px;
-            color: #4a7c96;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #4a7c96;
-            margin-bottom: 16px;
+            margin: 0;
+            color: var(--navy);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 0.95;
+            letter-spacing: -0.045em;
         }
 
-        /* Skills */
-        .skills-row {
-            margin-bottom: 7px;
-            font-size: 0.9rem;
-            line-height: 1.7;
+        .section-intro {
+            max-width: 500px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
-        .skills-row:last-child { margin-bottom: 0; }
-
-        .skills-cat {
-            font-weight: 600;
-            color: #333;
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
         }
 
-        .skills-list { color: #555; }
+        .skill-card {
+            padding: 18px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-md);
+            background: linear-gradient(180deg, #fff, rgba(248,250,252,0.92));
+        }
+        .skill-card h3 {
+            margin: 0 0 10px;
+            color: var(--navy);
+            font-size: 0.92rem;
+        }
+        .skill-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
 
-        /* Jobs */
+        .timeline {
+            position: relative;
+            display: grid;
+            gap: 18px;
+        }
+
         .job {
-            margin-bottom: 22px;
-            padding-left: 16px;
-            border-left: 2px solid #d5e3ec;
+            display: grid;
+            grid-template-columns: 165px 1fr;
+            gap: 24px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: #fff;
+            transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
         }
-
-        .job:last-child { margin-bottom: 0; }
-
-        .job-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
+        .job:hover {
+            transform: translateY(-3px);
+            border-color: rgba(214, 179, 106, 0.56);
+            box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
         }
-
-        .job-title {
-            font-weight: 700;
-            font-size: 0.95rem;
-            color: #1a1a1a;
-        }
-
         .job-date {
+            color: var(--gold-deep);
             font-size: 0.82rem;
-            color: #999;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
-
-        .job-co {
-            font-size: 0.87rem;
-            color: #666;
-            font-style: italic;
-            margin-top: 1px;
+        .job-title {
+            margin: 0;
+            color: var(--navy);
+            font-size: 1.02rem;
         }
-
-        .job ul {
-            margin-top: 5px;
-            padding-left: 17px;
-            font-size: 0.87rem;
-            color: #4a4a4a;
-        }
-
-        .job li { margin-bottom: 2px; }
-        .job li::marker { color: #b8cdd8; }
-
-        /* Education */
-        .edu {
-            padding-left: 16px;
-            border-left: 2px solid #d5e3ec;
-        }
-
-        .edu-title {
+        .job-company {
+            margin: 2px 0 10px;
+            color: var(--muted);
+            font-size: 0.88rem;
             font-weight: 700;
-            font-size: 0.95rem;
-            color: #1a1a1a;
+        }
+        .job ul {
+            margin: 0;
+            padding-left: 18px;
+            color: #334155;
+            font-size: 0.9rem;
+        }
+        .job li { margin-bottom: 4px; }
+        .job li::marker { color: var(--gold); }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
-        .edu-school {
-            font-size: 0.87rem;
-            color: #666;
+        .portfolio-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 312px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: #fff;
+            text-decoration: none;
+            box-shadow: 0 16px 38px rgba(15, 23, 42, 0.06);
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
         }
 
-        .edu-year {
-            font-size: 0.82rem;
-            color: #999;
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(214, 179, 106, 0.62);
+            box-shadow: 0 28px 70px rgba(15, 23, 42, 0.14);
+        }
+
+        .portfolio-image {
+            position: relative;
+            height: 184px;
+            overflow: hidden;
+            background: #e2e8f0;
+        }
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transform: scale(1.01);
+            transition: transform 500ms ease;
+        }
+        .portfolio-card:hover img { transform: scale(1.055); }
+
+        .portfolio-image::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 46%;
+            background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.5));
+        }
+
+        .portfolio-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+        }
+        .portfolio-title {
+            margin: 0;
+            color: var(--navy);
+            font-size: 1rem;
+            letter-spacing: -0.02em;
+        }
+        .portfolio-meta {
+            margin: 5px 0 12px;
+            color: var(--muted);
+            font-size: 0.79rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+        }
+        .portfolio-desc {
+            margin: 0;
+            color: #475569;
+            font-size: 0.86rem;
+        }
+        .portfolio-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin: 14px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+        .portfolio-stack li {
+            padding: 5px 8px;
+            border: 1px solid rgba(214, 179, 106, 0.34);
+            border-radius: 999px;
+            color: #334155;
+            background: rgba(214, 179, 106, 0.12);
+            font-size: 0.72rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .portfolio-link {
+            margin-top: auto;
+            padding-top: 16px;
+            color: var(--gold-deep);
+            font-size: 0.84rem;
+            font-weight: 900;
+        }
+
+        .education-card {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            padding: 22px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: #fff;
+        }
+        .education-card h3 { margin: 0; color: var(--navy); font-size: 1rem; }
+        .education-card p { margin: 4px 0 0; color: var(--muted); font-weight: 700; }
+        .education-year { color: var(--gold-deep); font-weight: 900; }
+
+        .footer {
+            margin: 34px 0 42px;
+            padding: 28px;
+            border-radius: var(--radius-xl);
+            background: var(--navy);
+            color: rgba(255,255,255,0.78);
+            text-align: center;
+        }
+        .footer strong { color: #fff; }
+        .footer a { color: var(--gold); text-decoration: none; font-weight: 800; }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .hero, .stats, .section, .footer {
+                animation: rise 620ms ease both;
+            }
+            .stats { animation-delay: 70ms; }
+            .section:nth-of-type(2) { animation-delay: 120ms; }
+            .section:nth-of-type(3) { animation-delay: 170ms; }
+            @keyframes rise {
+                from { opacity: 0; transform: translateY(18px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        }
+
+        @media (max-width: 980px) {
+            .hero { grid-template-columns: 1fr; padding: 36px; }
+            .profile-card { min-height: auto; }
+            .stats, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .section-head { align-items: flex-start; flex-direction: column; }
+        }
+
+        @media (max-width: 680px) {
+            .shell { width: min(100% - 22px, 1180px); }
+            .topbar { position: static; border-radius: 22px; align-items: flex-start; }
+            .nav { display: none; }
+            .hero { margin-top: 16px; padding: 28px 22px; border-radius: 24px; }
+            h1 { font-size: clamp(3rem, 18vw, 4.4rem); }
+            .stats, .skills-grid, .portfolio-grid { grid-template-columns: 1fr; }
+            .section { padding: 24px 18px; border-radius: 24px; }
+            .job { grid-template-columns: 1fr; gap: 8px; padding: 18px; }
+            .education-card { grid-template-columns: 1fr; }
+            .portfolio-card { min-height: auto; }
+            .portfolio-image { height: 210px; }
         }
 
         @media print {
             body { background: #fff; }
-            .page { box-shadow: none; margin: 0; border-radius: 0; }
-        }
-
-        @media (max-width: 600px) {
-            body { background: #fff; }
-            .page { margin: 0; border-radius: 0; box-shadow: none; }
-            .header { padding: 28px 20px 24px; }
-            .body { padding: 24px 20px 36px; }
-            .name { font-size: 1.6rem; }
-            .job-top { flex-direction: column; }
+            body::before, .topbar, .hero-actions, .footer { display: none; }
+            .shell { width: 100%; }
+            .hero, .section, .stat, .job, .portfolio-card, .education-card {
+                box-shadow: none;
+                break-inside: avoid;
+            }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div class="page">
-        <div class="header">
-            <div class="name">Asdar Syam</div>
-            <div class="role">Software Engineer</div>
+    <div class="shell">
+        <header class="topbar" aria-label="Primary navigation">
+            <a class="mark" href="#top" aria-label="Asdar Syam home">
+                <span class="mark-badge">AS</span>
+                <span>Asdar Syam</span>
+            </a>
+            <nav class="nav">
+                <a href="#skills">Skills</a>
+                <a href="#experience">Experience</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#education">Education</a>
+                <a href="mailto:asdar.binsyam@gmail.com">Contact</a>
+            </nav>
+        </header>
 
-            <p class="about">
-                Software engineer with 10+ years of experience building web and mobile applications.
-                Mostly worked with PHP/Laravel on the backend, React and Vue on the frontend,
-                and Kotlin, React Native, Flutter for mobile apps.
-            </p>
-
-            <div class="contact">
-                <a href="mailto:asdar.binsyam@gmail.com">asdar.binsyam@gmail.com</a>
-                <span class="sep">·</span>
-                <a href="https://wa.me/6285299476246" target="_blank">+62 852-9947-6246</a>
-                <span class="sep">·</span>
-                Sinjai, Indonesia
-                <br>
-                <a href="https://github.com/asd412id">github.com/asd412id</a>
-                <span class="sep">·</span>
-                <a href="https://linkedin.com/in/asd412id">linkedin.com/in/asd412id</a>
-            </div>
-        </div>
-
-        <div class="body">
-            <div class="section">
-                <h2>Skills</h2>
-                <div class="skills-row">
-                    <span class="skills-cat">Backend:</span>
-                    <span class="skills-list">PHP, Laravel, CodeIgniter, Node.js, Python, FastAPI</span>
-                </div>
-                <div class="skills-row">
-                    <span class="skills-cat">Frontend:</span>
-                    <span class="skills-list">JavaScript, React, Vue.js, jQuery, Tailwind CSS, Bootstrap</span>
-                </div>
-                <div class="skills-row">
-                    <span class="skills-cat">Mobile:</span>
-                    <span class="skills-list">Kotlin, Java, React Native, Flutter</span>
-                </div>
-                <div class="skills-row">
-                    <span class="skills-cat">Database & Tools:</span>
-                    <span class="skills-list">MySQL, PostgreSQL, Docker, Git, Linux</span>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Experience</h2>
-
-                <div class="job">
-                    <div class="job-top">
-                        <span class="job-title">Full Stack Developer</span>
-                        <span class="job-date">2019 – present</span>
+        <main id="top">
+            <section class="hero" aria-labelledby="intro-title">
+                <div>
+                    <div class="kicker">Software Engineer</div>
+                    <h1 id="intro-title">Full Stack Developer for practical, reliable digital products.</h1>
+                    <p class="headline">
+                        I am a software engineer with <span class="highlight">10+ years of experience</span> delivering web and mobile applications across education, geospatial, travel, and business workflows. My current focus is <span class="highlight">Node.js (Fastify), React.js, Tailwind CSS, and PostgreSQL</span>.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="mailto:asdar.binsyam@gmail.com">Email Me</a>
+                        <a class="btn btn-ghost" href="https://wa.me/6285299476246" target="_blank" rel="noopener">WhatsApp</a>
+                        <a class="btn btn-ghost" href="#portfolio">View Portfolio</a>
                     </div>
-                    <div class="job-co">Sinjai District Office of Education</div>
-                    <ul>
-                        <li>Build and maintain web and mobile apps for the district education office</li>
-                        <li>Internal tools for administrative processes and data management</li>
-                        <li>Stack: Laravel, React, Flutter</li>
-                    </ul>
                 </div>
 
-                <div class="job">
-                    <div class="job-top">
-                        <span class="job-title">Full Stack Web Developer</span>
-                        <span class="job-date">2020 – 2021</span>
+                <aside class="profile-card" aria-label="Contact information">
+                    <div>
+                        <span class="availability">Available for opportunities</span>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Sinjai, Indonesia</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Email</span>
+                                <a class="contact-value" href="mailto:asdar.binsyam@gmail.com">asdar.binsyam@gmail.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Phone</span>
+                                <a class="contact-value" href="https://wa.me/6285299476246" target="_blank" rel="noopener">+62 852-9947-6246</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Profiles</span>
+                                <a class="contact-value" href="https://github.com/asd412id" target="_blank" rel="noopener">github.com/asd412id</a>
+                                <a class="contact-value" href="https://linkedin.com/in/asd412id" target="_blank" rel="noopener">linkedin.com/in/asd412id</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="job-co">PT. Geokatalis Indonesia</div>
-                    <ul>
-                        <li>Built a spatial map application for geographic data visualization</li>
-                        <li>Integrated mapping APIs and geospatial data processing</li>
-                    </ul>
-                </div>
+                </aside>
+            </section>
 
-                <div class="job">
-                    <div class="job-top">
-                        <span class="job-title">Backend Developer</span>
-                        <span class="job-date">2018</span>
+            <section class="stats" aria-label="Career highlights">
+                <div class="stat"><strong>10+</strong><span>Years of engineering experience</span></div>
+                <div class="stat"><strong>11</strong><span>Selected portfolio works</span></div>
+                <div class="stat"><strong>4</strong><span>Primary product domains</span></div>
+                <div class="stat"><strong>Full</strong><span>Backend, frontend, mobile delivery</span></div>
+            </section>
+
+            <section class="section" id="skills">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Expertise</span>
+                        <h2>Technology stack</h2>
                     </div>
-                    <div class="job-co">PT. Docotel Teknologi Celebes</div>
-                    <ul>
-                        <li>Developed a prisoner remission management system with Laravel</li>
-                        <li>Designed the database schema and REST APIs</li>
-                    </ul>
+                    <p class="section-intro">A pragmatic stack for building maintainable APIs, responsive interfaces, internal systems, and production-ready business applications.</p>
                 </div>
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <h3>Backend</h3>
+                        <p>Node.js, Fastify, REST APIs, PHP, Laravel, CodeIgniter, Python, FastAPI</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Frontend</h3>
+                        <p>React.js, Tailwind CSS, JavaScript, Vue.js, jQuery, Bootstrap</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Database & DevOps</h3>
+                        <p>PostgreSQL, MySQL, Docker, Git, Linux, deployment support</p>
+                    </article>
+                    <article class="skill-card">
+                        <h3>Mobile</h3>
+                        <p>Kotlin, Java, React Native, Flutter, cross-platform delivery</p>
+                    </article>
+                </div>
+            </section>
 
-                <div class="job">
-                    <div class="job-top">
-                        <span class="job-title">WordPress Developer</span>
-                        <span class="job-date">2017</span>
+            <section class="section" id="experience">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Experience</span>
+                        <h2>Professional journey</h2>
                     </div>
-                    <div class="job-co">PT. Viva Holiday</div>
-                    <ul>
-                        <li>Custom themes and plugins for a travel booking platform</li>
-                    </ul>
+                    <p class="section-intro">Hands-on engineering experience across public-sector systems, mapping products, internal platforms, and commercial web applications.</p>
                 </div>
+                <div class="timeline">
+                    <article class="job">
+                        <div class="job-date">2019 — Present</div>
+                        <div>
+                            <h3 class="job-title">Full Stack Developer</h3>
+                            <div class="job-company">Sinjai District Office of Education</div>
+                            <ul>
+                                <li>Build and maintain internal web applications for education-office administration, reporting, and structured data management.</li>
+                                <li>Develop backend services and integration-ready REST APIs using Node.js (Fastify) and PostgreSQL.</li>
+                                <li>Create responsive, operator-friendly interfaces using React.js and Tailwind CSS.</li>
+                                <li>Support production maintenance, troubleshooting, deployment workflows, and iterative product improvements.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <div class="job-date">2020 — 2021</div>
+                        <div>
+                            <h3 class="job-title">Full Stack Web Developer</h3>
+                            <div class="job-company">PT. Geokatalis Indonesia</div>
+                            <ul>
+                                <li>Built a spatial map application for geographic data visualization and operational decision support.</li>
+                                <li>Integrated mapping APIs and geospatial data processing into web application workflows.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <div class="job-date">2018</div>
+                        <div>
+                            <h3 class="job-title">Backend Developer</h3>
+                            <div class="job-company">PT. Docotel Teknologi Celebes</div>
+                            <ul>
+                                <li>Developed a prisoner remission management system with Laravel.</li>
+                                <li>Designed database schemas and REST APIs for core backend modules.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <div class="job-date">2017</div>
+                        <div>
+                            <h3 class="job-title">WordPress Developer</h3>
+                            <div class="job-company">PT. Viva Holiday</div>
+                            <ul>
+                                <li>Developed custom themes and plugins for a travel booking platform.</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="job">
+                        <div class="job-date">2016</div>
+                        <div>
+                            <h3 class="job-title">Full Stack Developer / Team Lead</h3>
+                            <div class="job-company">PT. Tegar Jati</div>
+                            <ul>
+                                <li>Led a small development team building web applications with CodeIgniter.</li>
+                                <li>Handled delivery planning, code review, deployment coordination, and stakeholder communication.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-                <div class="job">
-                    <div class="job-top">
-                        <span class="job-title">Full Stack Developer / Team Lead</span>
-                        <span class="job-date">2016</span>
+            <section class="section" id="portfolio">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Selected work</span>
+                        <h2>Portfolio</h2>
                     </div>
-                    <div class="job-co">PT. Tegar Jati</div>
-                    <ul>
-                        <li>Led a small team building web apps with CodeIgniter</li>
-                        <li>Handled project planning, code reviews, and deployments</li>
-                    </ul>
+                    <p class="section-intro">A selection of deployed products, internal platforms, automation tools, and public-facing applications. Stack notes are based on GitHub repositories when available, supported by fetched public website HTML/assets.</p>
                 </div>
-            </div>
 
-            <div class="section">
-                <h2>Education</h2>
-                <div class="edu">
-                    <div class="edu-title">B.S. Informatics and Computer Engineering</div>
-                    <div class="edu-school">Makassar State University</div>
-                    <div class="edu-year">2011 – 2015</div>
+                <div class="portfolio-grid">
+                    <a class="portfolio-card" href="https://arkavacation.com" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/arkavacation.com.jpeg" alt="Arka Vacation website preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">Arka Vacation</h3>
+                            <div class="portfolio-meta">Travel platform</div>
+                            <p class="portfolio-desc">Public-facing travel website for tour packages, rental vehicles, open trips, search, and WhatsApp lead capture.</p>
+                            <ul class="portfolio-stack"><li>WordPress</li><li>Tailwind CSS</li><li>jQuery</li><li>Swiper</li></ul>
+                            <span class="portfolio-link">arkavacation.com →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://dockerman.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/dockerman.maccaqe.id.jpeg" alt="Dockerman web application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">Dockerman</h3>
+                            <div class="portfolio-meta">DevOps utility</div>
+                            <p class="portfolio-desc">Docker management interface for server and container workflow visibility with real-time updates.</p>
+                            <ul class="portfolio-stack"><li>React</li><li>Vite</li><li>TypeScript</li><li>Express</li><li>Dockerode</li><li>Socket.io</li></ul>
+                            <span class="portfolio-link">dockerman.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://e-presensi.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/e-presensi.maccaqe.id.jpeg" alt="E-Presensi application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">E-Presensi</h3>
+                            <div class="portfolio-meta">Attendance system</div>
+                            <p class="portfolio-desc">Digital attendance platform for managing activities, attendance records, signatures, and generated documents.</p>
+                            <ul class="portfolio-stack"><li>Fastify</li><li>PostgreSQL</li><li>Sequelize</li><li>React</li><li>Vite</li><li>Tailwind CSS</li></ul>
+                            <span class="portfolio-link">e-presensi.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://e-sertifikat.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/e-sertifikat.maccaqe.id.jpeg" alt="E-Sertifikat certificate platform preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">E-Sertifikat</h3>
+                            <div class="portfolio-meta">Certificate platform</div>
+                            <p class="portfolio-desc">Digital certificate management system for certificate generation, event administration, and verification workflows.</p>
+                            <ul class="portfolio-stack"><li>Fastify</li><li>PostgreSQL</li><li>Sequelize</li><li>React</li><li>Vite</li><li>MUI</li></ul>
+                            <span class="portfolio-link">e-sertifikat.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://e-sertifikat.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/e-sertifikat.maccaqe.id%20-%202.jpeg" alt="E-Sertifikat dashboard preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">E-Sertifikat Dashboard</h3>
+                            <div class="portfolio-meta">Admin interface</div>
+                            <p class="portfolio-desc">Administration view for managing certificate data, issuance, templates, participants, and verification operations.</p>
+                            <ul class="portfolio-stack"><li>PDF-lib</li><li>Puppeteer</li><li>QRCode</li><li>XLSX</li><li>React</li><li>Konva</li></ul>
+                            <span class="portfolio-link">e-sertifikat.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://github.com/asd412id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/github.com.jpeg" alt="GitHub profile preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">GitHub Portfolio</h3>
+                            <div class="portfolio-meta">Code profile</div>
+                            <p class="portfolio-desc">Public code profile with 52 repositories available, covering experiments, products, and engineering work samples.</p>
+                            <ul class="portfolio-stack"><li>GitHub</li><li>Repositories</li><li>Open Source</li><li>Version Control</li></ul>
+                            <span class="portfolio-link">github.com/asd412id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/maccaqe.id.jpeg" alt="Maccaqe website preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">Maccaqe</h3>
+                            <div class="portfolio-meta">Application portal</div>
+                            <p class="portfolio-desc">Digital portal for education applications, services, and communities connected to Dinas Pendidikan Kabupaten Sinjai.</p>
+                            <ul class="portfolio-stack"><li>React</li><li>Vite</li><li>TypeScript</li><li>Tailwind CSS</li><li>HeroUI</li><li>Laravel</li></ul>
+                            <span class="portfolio-link">maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://pdf-studio.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/pdf-studio.maccaqe.id.jpeg" alt="PDF Studio application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">PDF Studio</h3>
+                            <div class="portfolio-meta">PDF utility</div>
+                            <p class="portfolio-desc">PDF productivity tool for compressing, merging, parsing, and converting documents through a browser-based interface.</p>
+                            <ul class="portfolio-stack"><li>React</li><li>Express</li><li>pdf-lib</li><li>pdf-parse</li><li>Sharp</li><li>CRA</li></ul>
+                            <span class="portfolio-link">pdf-studio.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://simpatik.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/simpatik.maccaqe.id.jpeg" alt="SIMPATIK application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">SIM-PATIK / AMDPT</h3>
+                            <div class="portfolio-meta">Education & staff data system</div>
+                            <p class="portfolio-desc">Aplikasi Manajemen Data Pegawai Terpadu for education-office staff, school, attendance, journal, and reporting workflows.</p>
+                            <ul class="portfolio-stack"><li>Fastify</li><li>MySQL</li><li>Sequelize</li><li>React</li><li>Mantine</li><li>Vite PWA</li></ul>
+                            <span class="portfolio-link">simpatik.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://tasikolasi.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/tasikolasi.maccaqe.id.jpeg" alt="Tasikolasi application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">Tasikolasi</h3>
+                            <div class="portfolio-meta">Data platform</div>
+                            <p class="portfolio-desc">Structured data application for records, monitoring, reporting, and operational data workflows.</p>
+                            <ul class="portfolio-stack"><li>Vite</li><li>JavaScript</li><li>Roboto UI</li><li>Cloudflare</li></ul>
+                            <span class="portfolio-link">tasikolasi.maccaqe.id →</span>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="https://wacenter.maccaqe.id" target="_blank" rel="noopener">
+                        <div class="portfolio-image"><img src="/assets/wacenter.maccaqe.id.jpeg" alt="WA Center application preview" loading="lazy"></div>
+                        <div class="portfolio-body">
+                            <h3 class="portfolio-title">WA Center</h3>
+                            <div class="portfolio-meta">Messaging tool</div>
+                            <p class="portfolio-desc">WhatsApp-centered communication tool for message handling, operational automation, queues, and real-time status updates.</p>
+                            <ul class="portfolio-stack"><li>React</li><li>Vite</li><li>Express</li><li>Prisma</li><li>Redis</li><li>Go</li></ul>
+                            <span class="portfolio-link">wacenter.maccaqe.id →</span>
+                        </div>
+                    </a>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <section class="section" id="education">
+                <div class="section-head">
+                    <div>
+                        <span class="eyebrow">Education</span>
+                        <h2>Academic background</h2>
+                    </div>
+                </div>
+                <div class="education-card">
+                    <div>
+                        <h3>B.S. Informatics and Computer Engineering</h3>
+                        <p>Makassar State University</p>
+                    </div>
+                    <div class="education-year">2011 — 2015</div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p><strong>Let’s build reliable software.</strong> For collaboration or hiring inquiries, contact <a href="mailto:asdar.binsyam@gmail.com">asdar.binsyam@gmail.com</a>.</p>
+        </footer>
     </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Asdar Syam",
+        "jobTitle": "Software Engineer / Full Stack Developer",
+        "email": "mailto:asdar.binsyam@gmail.com",
+        "telephone": "+62 852-9947-6246",
+        "address": { "@type": "PostalAddress", "addressLocality": "Sinjai", "addressCountry": "Indonesia" },
+        "sameAs": ["https://github.com/asd412id", "https://linkedin.com/in/asd412id"],
+        "knowsAbout": ["Node.js", "Fastify", "React.js", "Tailwind CSS", "PostgreSQL", "Laravel", "Flutter"]
+    }
+    </script>
 </body>
 </html>
